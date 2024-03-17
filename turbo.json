@@ -20,6 +20,7 @@
       "cache": false
     },
     "prisma:push": {
+      "dependsOn": ["prisma:symlinks"],
       "cache": false
     },
     "prisma:push-hard": {
