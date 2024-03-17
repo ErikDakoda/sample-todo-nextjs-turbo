@@ -1,0 +1,35 @@
+import "../auth/models/base"
+import "../todo/list"
+import "../todo/todo"
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters", "fullTextSearch", "fullTextIndex"]
+  output   = "./client"
+}
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+plugin prisma {
+    provider = '@core/prisma'
+    output = './prisma/schema.prisma'
+    format = true
+}
+
+plugin hooks {
+  provider = '@zenstackhq/tanstack-query'
+  version = "v5"
+  output = "./hooks"
+  target = "react"
+  useSuperJson = true
+}
+
+plugin zod {
+  provider = '@core/zod'
+  compile = false
+  output = "./zod"
+}

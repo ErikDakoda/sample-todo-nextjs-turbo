@@ -1,0 +1,46 @@
+import "../../database/schema"
+import "account"
+import "space"
+
+
+/*
+ * Enum for user's role in a space
+ */
+enum UserRole {
+    USER
+    ADMIN
+}
+
+/*
+ * Model for a user
+ */
+model User {
+    id            String    @id @default(cuid())
+    createdAt     DateTime  @default(now())
+    updatedAt     DateTime  @updatedAt
+    email         String    @unique @email('Please enter a valid email address')
+    emailVerified DateTime?
+    password      String?   @password @omit
+    name          String?
+    image         String?   @url
+    role          UserRole  @default(USER)
+    activeSpaceId String?
+
+    spaces        SpaceUser[]
+    accounts      Account[] // next-auth
+    lists         List[]
+    todos         Todo[]
+
+    // can be created by anyone, even not logged in
+    @@allow('create', true)
+
+    // can be read by users sharing any space
+    @@allow('read', spaces?[space.members?[user.id == auth().id]])
+
+    // full access by oneself
+    @@allow('all', auth() == this)
+
+    // admins have full access
+    @@allow('all', auth().role == ADMIN)
+}
+

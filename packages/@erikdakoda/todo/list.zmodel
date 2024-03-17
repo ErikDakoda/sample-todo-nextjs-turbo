@@ -1,0 +1,10 @@
+import "../auth/models/base"
+import "./todo"
+
+/**
+ * Model for a Todo list
+ */
+model List extends Base {
+    title String @length(1, 100)
+    todos Todo[]
+}

@@ -1,0 +1,14 @@
+import "../auth/models/base"
+
+/**
+ * Model for a single Todo
+ */
+model Todo extends Base {
+    title        String @length(1, 100)
+    completedAt  DateTime?
+
+    listId       String
+    list         List @relation(fields: [listId], references: [id], onDelete: Cascade)
+
+    @@index([listId])
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env"],
+  "globalEnv": ["DATABASE_*"],
+  "pipeline": {
+    "build-quick": {
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "build": {
+      "dependsOn": ["prisma:push", "^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "zen:generate": {
+      "inputs": ["schema.zmodel"],
+      "cache": false
+    },
+    "prisma:push": {
+      "cache": false
+    },
+    "prisma:push-hard": {
+      "dependsOn": ["prisma:symlinks"],
+      "cache": false
+    },
+    "prisma:symlinks": {
+      "dependsOn": ["zen:generate"],
+      "cache": false
+    },
+    "clean": { "cache": false },
+    "lint": {},
+    "ts:check": {},
+    "vitest:unit": {},
+    "vitest:integ": {},
+    "vitest:coverage": {},
+    "vitest:symlinks": {},
+    "npm:check-update": {},
+    "npm:version": {}
+  }
+}

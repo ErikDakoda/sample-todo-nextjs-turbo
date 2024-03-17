@@ -1,0 +1,5 @@
+packages:
+  - 'apps/todo'
+  - 'packages/@erikdakoda/*'
+  - 'packages/default-configs'
+  - 'packages/tsconfig'

@@ -1,0 +1,21 @@
+{
+  "extends": "default-configs/tsconfig/base.json",
+  "root": "true",
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "paths": {
+      "@dakoda/*": ["../../@erikdakoda/*", "./node_modules/@erikdakoda/*"],
+      ".prisma/*": ["./node_modules/.prisma/*"],
+      ".zenstack/*": ["./node_modules/.zenstack/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "/node_modules/**/*",
+    "./global.d.ts",
+    "../auth/next-auth.d.ts"
+  ],
+  "exclude": ["node_modules", "__tests__", "hooks", "zod", "prisma"]
+}

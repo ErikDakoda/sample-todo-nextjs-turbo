@@ -1,0 +1,22 @@
+{
+  "extends": "default-configs/tsconfig/nextjs.json",
+  "root": "true",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@dakoda/*": ["../../packages/@erikdakoda/*", "./node_modules/@erikdakoda/*"]
+    },
+    "strictNullChecks": true
+  },
+  "include": [
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    "/node_modules/**/*",
+    "next-env.d.ts",
+    "../../packages/@erikdakoda/database/global.d.ts",
+    "../../packages/@erikdadoda/auth/next-auth.d.ts",
+    "../../packages/@erikdakoda/auth-ui/AuthGuard.tsx"
+  ],
+  "exclude": ["node_modules"]
+}

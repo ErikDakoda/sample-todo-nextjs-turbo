@@ -1,0 +1,10 @@
+{
+  "extends": "default-configs/tsconfig/react.json",
+  "root": "true",
+  "compilerOptions": {
+    "paths": {
+      "@dakoda/*": ["../../@erikdakoda/*", "./node_modules/@erikdakoda/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "/node_modules/**/*", "../auth/next-auth.d.ts"]
+}

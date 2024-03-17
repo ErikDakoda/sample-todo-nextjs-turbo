@@ -1,0 +1,4 @@
+{
+  "extends": "default-configs/tsconfig/base.json",
+  "include": ["packages/@erikdakoda/auth/next-auth.d.ts"]
+}

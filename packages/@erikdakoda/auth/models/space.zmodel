@@ -1,0 +1,64 @@
+import "../../database/schema"
+
+/*
+ * Enum for user's role in a space
+ */
+enum SpaceUserRole {
+    USER
+    ADMIN
+}
+
+/*
+ * Model for a shared space like a company or organization
+ */
+model Space {
+    id           String @id @default(cuid())
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @updatedAt
+    name         String @length(3, 50, "Name must be between 3 and 50 characters")
+    slug         String @unique @regex('^[0-9a-zA-Z_]{4,50}$') @default(cuid())
+
+    members      SpaceUser[]
+    lists        List[]
+    todos        Todo[]
+    
+    // require login
+    @@deny('all', auth() == null)
+
+    // everyone can create a space
+    @@allow('create', true)
+
+    // any user in the space can read the space
+    @@allow('read', members?[userId == auth().id])
+
+    // space admin can update and delete
+    @@allow('update,delete', members?[userId == auth().id && role == ADMIN])
+}
+
+/*
+ * Model representing membership of a user in a space
+ */
+model SpaceUser {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    userId    String
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    spaceId   String
+    space     Space    @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+    role      SpaceUserRole
+
+    // require login
+    @@deny('all', auth() == null)
+
+    // space admin can create/update/delete
+    @@allow('create,update,delete', space.members?[userId == auth().id] && role == ADMIN)
+
+    // user can read entries for spaces which he's a member of
+    @@allow('read', space.members?[userId == auth().id])
+
+    @@unique([userId, spaceId])
+    @@index([userId])
+    @@index([spaceId])
+}
+

@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Todo: Debug server",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/apps/todo",
+      "command": "npm run debug"
+    },
+    {
+      "name": "Todo: Debug client",
+      "type": "chrome",
+      "request": "launch",
+      "webRoot": "${workspaceFolder}/apps/todo",
+      "url": "http://localhost:3000",
+      "runtimeExecutable": "canary"
+    },
+    {
+      "name": "Todo: Attach 9230",
+      "port": 9230,
+      "request": "attach",
+      "cwd": "${workspaceFolder}/apps/todo",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ]
+}

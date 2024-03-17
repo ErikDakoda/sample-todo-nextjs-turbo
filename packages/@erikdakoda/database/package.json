@@ -1,0 +1,39 @@
+{
+  "name": "@erikdakoda/database",
+  "version": "0.8.7",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "with-env": "dotenv -e ../../../apps/todo/.env --",
+    "prisma:studio": "pnpm with-env prisma studio",
+    "prisma:push": "pnpm with-env prisma db push",
+    "prisma:push-hard": "pnpm prisma db push --accept-data-loss --skip-generate",
+    "prisma:symlinks": "bash ../../../scripts/prisma-symlinks.sh",
+    "zen:generate": "pnpm zenstack generate",
+    "clean": "rm -rf .next/ .turbo/ node_modules/ hooks prisma zod",
+    "lint": "eslint .",
+    "prettier:format": "prettier --write .",
+    "ts:check": "tsc",
+    "npm:version": "npm version --allow-same-version",
+    "npm:check-update": "npm-check --update --skip-unused",
+    "npm:check-unused": "npm-check --skip-update --ignore @dakoda/*,@material/*",
+    "generate-secret": "node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\""
+  },
+  "dependencies": {
+    "@planetscale/database": "1.16.0",
+    "@prisma/adapter-planetscale": "5.9.1",
+    "@prisma/client": "5.7.1",
+    "@zenstackhq/runtime": "1.9.0",
+    "@zenstackhq/server": "1.9.0",
+    "db": "link:prisma/client"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "14.1.0",
+    "@zenstackhq/tanstack-query": "1.9.0",
+    "dotenv-cli": "7.3.0",
+    "npm-check": "6.0.1",
+    "prisma": "5.7.1",
+    "zenstack": "1.9.0"
+  }
+}
