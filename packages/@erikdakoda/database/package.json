@@ -1,11 +1,11 @@
 {
   "name": "@erikdakoda/database",
-  "version": "0.8.7",
+  "version": "0.1.0",
   "type": "module",
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
-    "with-env": "dotenv -e ../../../apps/todo/.env --",
+    "with-env": "dotenv -e ../../../apps/todo/.env.local --",
     "prisma:studio": "pnpm with-env prisma studio",
     "prisma:push": "pnpm with-env prisma db push",
     "prisma:push-hard": "pnpm prisma db push --accept-data-loss --skip-generate",
@@ -17,8 +17,7 @@
     "ts:check": "tsc",
     "npm:version": "npm version --allow-same-version",
     "npm:check-update": "npm-check --update --skip-unused",
-    "npm:check-unused": "npm-check --skip-update --ignore @dakoda/*,@material/*",
-    "generate-secret": "node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\""
+    "npm:check-unused": "npm-check --skip-update --ignore @dakoda/*,@material/*"
   },
   "dependencies": {
     "@planetscale/database": "1.16.0",

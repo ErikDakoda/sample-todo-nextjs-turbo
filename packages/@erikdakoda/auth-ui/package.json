@@ -1,13 +1,14 @@
 {
   "name": "@erikdakoda/auth-ui",
-  "version": "0.8.7",
+  "version": "0.1.0",
   "type": "module",
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
     "clean": "rm -rf .next/ .turbo/ node_modules/ hooks prisma zod",
     "lint": "eslint .",
-    "prettier:format": "prettier --write ."
+    "prettier:format": "prettier --write .",
+    "npm:version": "npm version --allow-same-version"
   },
   "dependencies": {
     "next": "14.1.0",

@@ -27,25 +27,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# local env files
-.env*.local
-.env
-
 # vercel
 .vercel
-
-# prisma
-/prisma
-/src/prisma
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-.idea
 pnpm-lock.yaml
-
-# vscode
-.vscode/launch.json
-
-# sentry
-.sentryclirc

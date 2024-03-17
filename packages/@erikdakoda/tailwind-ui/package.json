@@ -1,12 +1,13 @@
 {
   "name": "@erikdakoda/tailwind-ui",
-  "version": "0.8.7",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "clean": "rm -rf .next/ .turbo/ node_modules/",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "npm:version": "npm version --allow-same-version"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.1.0",

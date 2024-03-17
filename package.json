@@ -1,6 +1,6 @@
 {
-  "name": "zenstack-todo-sample-nextjs-turbo",
-  "version": "0.8.7",
+  "name": "zenstack-sample-todo-nextjs-turbo",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -27,7 +27,7 @@
     "vitest:unit": "vitest unit",
     "vitest:integ": "vitest integ",
     "vitest:coverage": "turbo run vitest:coverage",
-    "npm:version": "turbo run npm:version -- 0.8.7",
+    "npm:version": "turbo run npm:version -- 0.1.0",
     "npm:check-update": "turbo run npm:check-update",
     "npm:check-unused": "turbo run npm:check-unused",
     "syncpack:list": "syncpack list-mismatches",

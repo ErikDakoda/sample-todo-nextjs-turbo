@@ -4,6 +4,7 @@
   "globalEnv": ["DATABASE_*"],
   "pipeline": {
     "build-quick": {
+      "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "build": {
@@ -11,7 +12,7 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "dev": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build-quick"],
       "cache": false,
       "persistent": true
     },
