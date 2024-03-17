@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-echo creating .prisma symlink
+echo changing name of db package from '.prisma/client' to 'db'
 echo "$PWD"
-cd ./node_modules/ || exit
-ln -s -f -F -v ../prisma/ .prisma
-echo .prisma symlink created
-
-echo changing .prisma/client to db
-echo "$PWD"
-cd ../prisma/client || exit
+cd ./prisma/client || exit
 sed -i 's/\.prisma\/client/db/' package.json || sed -i .bak 's/\.prisma\/client/db/' package.json
-echo .prisma/client changed to db
+echo name of db package fixed
+
+echo creating .prisma symlink in root node_modules
+echo "$PWD"
+cd ../../../../../node_modules/ || exit
+ln -s -f -F -v ../packages/@erikdakoda/database/prisma/ .prisma
+echo .prisma symlink created

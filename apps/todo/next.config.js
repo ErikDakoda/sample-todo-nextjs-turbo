@@ -19,6 +19,9 @@ const nextConfig = {
     '@erikdakoda/auth-ui',
   ],
   swcMinify: true,
+  images: {
+    domains: ['picsum.photos', 'lh3.googleusercontent.com', 'avatars.githubusercontent.com'],
+  },
   env: {
     APP_VERSION: process.env.npm_package_version,
   },

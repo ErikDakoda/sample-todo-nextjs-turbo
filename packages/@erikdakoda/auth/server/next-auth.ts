@@ -102,7 +102,7 @@ export const authOptions: NextAuthOptions = {
       if (spaceCount === 0) {
         space = await extendedPrisma.space.create({
           data: {
-            name: `${user?.name || user?.email?.split('@')[0]}'s space`,
+            name: `${user?.name || user?.email?.split('@')[0]}’s space`,
             members: {
               create: [
                 {

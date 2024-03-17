@@ -23,16 +23,16 @@
     "@planetscale/database": "1.16.0",
     "@prisma/adapter-planetscale": "5.9.1",
     "@prisma/client": "5.7.1",
-    "@zenstackhq/runtime": "1.9.0",
-    "@zenstackhq/server": "1.9.0",
+    "@zenstackhq/runtime": "1.11.0",
+    "@zenstackhq/server": "1.11.0",
     "db": "link:prisma/client"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.1.0",
-    "@zenstackhq/tanstack-query": "1.9.0",
-    "dotenv-cli": "7.3.0",
+    "@zenstackhq/tanstack-query": "1.11.0",
+    "dotenv-cli": "7.4.1",
     "npm-check": "6.0.1",
     "prisma": "5.7.1",
-    "zenstack": "1.9.0"
+    "zenstack": "1.11.0"
   }
 }
