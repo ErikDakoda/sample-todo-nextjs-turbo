@@ -3,7 +3,7 @@
   "root": "true",
   "compilerOptions": {
     "paths": {
-      "@dakoda/*": ["../../@erikdakoda/*", "./node_modules/@erikdakoda/*"]
+      "@erikdakoda/*": ["../*", "./node_modules/@erikdakoda/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "/node_modules/**/*", "../auth/next-auth.d.ts"]

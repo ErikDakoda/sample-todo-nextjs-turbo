@@ -1,8 +1,8 @@
 import { TrashIcon } from '@heroicons/react/24/outline';
-import { useDeleteTodo, useUpdateTodo } from '@dakoda/database/hooks';
-import type { Todo, User } from '@dakoda/database';
+import { useDeleteTodo, useUpdateTodo } from '@erikdakoda/database/hooks';
+import type { Todo, User } from '@erikdakoda/database';
 import type { ChangeEvent } from 'react';
-import Avatar from './Avatar';
+import Avatar from '@erikdakoda/auth-ui/components/Avatar';
 import TimeInfo from './TimeInfo';
 
 type Props = {

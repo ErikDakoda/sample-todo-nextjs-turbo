@@ -16,7 +16,7 @@ model Space {
     createdAt    DateTime @default(now())
     updatedAt    DateTime @updatedAt
     name         String @length(3, 50, "Name must be between 3 and 50 characters")
-    slug         String @unique @regex('^[0-9a-zA-Z_]{4,50}$') @default(cuid())
+    slug         String @unique @regex('^[0-9a-zA-Z_\-]{4,50}$') @default(cuid())
 
     members      SpaceUser[]
     lists        List[]

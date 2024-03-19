@@ -1,11 +1,19 @@
 import { type AuthUser, enhance } from '@zenstackhq/runtime';
 import type { GetServerSidePropsContext } from 'next';
-import { getServerAuthSession } from '@dakoda/auth/server/getServerAuthSession';
+import { getServerAuthSession } from '@erikdakoda/auth/server/getServerAuthSession';
 import { getBasePrisma } from './getBasePrisma';
 import { getExtendedPrisma } from './prismaExtensions';
 
 const basePrisma = getBasePrisma();
 
+/**
+ * Get the Prisma client with extensions and ZenStack enhancements (like permissions).
+ * See https://www.prisma.io/docs/orm/prisma-client/client-extensions
+ * @param ctx The Next.js context.
+ * @param ctx.req The Next.js request.
+ * @param ctx.res The Next.js response.
+ * @returns The Prisma client.
+ */
 export async function getEnhancedPrisma(ctx: {
   req: GetServerSidePropsContext['req'];
   res: GetServerSidePropsContext['res'];
@@ -15,6 +23,6 @@ export async function getEnhancedPrisma(ctx: {
   return enhance(
     extendedPrisma,
     { user: session?.user as unknown as AuthUser },
-    { logPrismaQuery: process.env.LOG_PRISMA_QUERY === 'true' },
+    { logPrismaQuery: process.env.LOG_ZEN_QUERY === 'true' },
   );
 }

@@ -1,15 +1,15 @@
-import { useCurrentSpace, useCurrentUser } from '@dakoda/auth-ui/context';
-import { useCreateList, useFindManyList } from '@dakoda/database/hooks';
-import type { List, Space, User } from '@dakoda/database';
+import { useCurrentSpace, useCurrentUser } from '@erikdakoda/auth-ui/context';
+import { useCreateList, useFindManyList } from '@erikdakoda/database/hooks';
+import type { List, Space, User } from '@erikdakoda/database';
 import BreadCrumb from '@/components/BreadCrumb';
-import SpaceMembers from '@/components/SpaceMembers';
-import TodoList from '@/components/TodoList';
+import SpaceMembers from '@erikdakoda/auth-ui/components/SpaceMembers';
+import TodoList from '@erikdakoda/todo-ui/components/TodoList';
 import WithNavBar from '@/components/WithNavBar';
 import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { type ChangeEvent, type FormEvent, useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
-import { getEnhancedPrisma } from '@dakoda/database/server/getEnhancedPrisma';
+import { getEnhancedPrisma } from '@erikdakoda/database/server/getEnhancedPrisma';
 
 function CreateDialog() {
   const { user } = useCurrentUser();

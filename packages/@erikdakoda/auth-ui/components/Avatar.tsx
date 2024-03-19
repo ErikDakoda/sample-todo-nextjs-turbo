@@ -2,7 +2,7 @@ import type { User } from 'next-auth';
 import Image from 'next/image';
 
 type Props = {
-  user: User;
+  user: Pick<User, 'name' | 'image' | 'email'>;
   size?: number;
 };
 

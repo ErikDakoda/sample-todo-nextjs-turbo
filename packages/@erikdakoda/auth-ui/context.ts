@@ -1,9 +1,9 @@
-import { type Space } from '@dakoda/database';
+import { type Space } from '@erikdakoda/database';
 import { type User } from 'next-auth';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { createContext } from 'react';
-import { useFindManySpace } from '@dakoda/database/hooks';
+import { useFindManySpace } from '@erikdakoda/database/hooks';
 
 export type UserContextType = {
   user: User | undefined;

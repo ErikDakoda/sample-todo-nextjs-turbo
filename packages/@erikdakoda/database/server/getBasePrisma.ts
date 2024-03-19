@@ -4,9 +4,7 @@ import { PrismaClient } from 'db';
 
 export function getBasePrisma() {
   const client = new Client({
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD,
+    url: process.env.DATABASE_URL,
   });
   const adapter = new PrismaPlanetScale(client);
   const basePrisma = new PrismaClient({

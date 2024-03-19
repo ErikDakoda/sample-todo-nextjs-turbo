@@ -5,20 +5,15 @@ declare global {
 
   namespace NodeJS {
     interface ProcessEnv {
-      NEXT_PUBLIC_VERCEL_ENV: string;
-      BASE_URL: string;
-      SUPPORT_EMAIL: string;
-
       // NextAuth
       NEXTAUTH_SECRET: string;
+      NEXTAUTH_URL: string;
+      GITHUB_ID: string;
+      GITHUB_SECRET: string;
 
       // Database
-      DATABASE_HOST: string;
-      DATABASE_USERNAME: string;
-      DATABASE_PASSWORD: string;
       DATABASE_URL: string;
-      PRISMA_GENERATE_NO_ENGINE: string;
-      LOG_PRISMA_QUERY: string;
+      LOG_ZEN_QUERY: string;
       LOG_PRISMA_INFO: string;
     }
   }

@@ -4,19 +4,16 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],
-      "@dakoda/*": ["../../packages/@erikdakoda/*", "./node_modules/@erikdakoda/*"]
+      "@erikdakoda/*": ["../../packages/@erikdakoda/*", "./node_modules/@erikdakoda/*"]
     },
     "strictNullChecks": true
   },
   "include": [
-    "src",
-    "**/*.ts",
-    "**/*.tsx",
-    "/node_modules/**/*",
+    "src/**/*",
+    "node_modules/**/*",
     "next-env.d.ts",
-    "../../packages/@erikdakoda/database/global.d.ts",
-    "../../packages/@erikdadoda/auth/next-auth.d.ts",
-    "../../packages/@erikdakoda/auth-ui/AuthGuard.tsx"
+    "global.d.ts",
+    "../../packages/@erikdadoda/auth/next-auth.d.ts"
   ],
   "exclude": ["node_modules"]
 }

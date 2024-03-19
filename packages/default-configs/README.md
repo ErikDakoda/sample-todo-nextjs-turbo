@@ -1,3 +1,3 @@
 # `default-configs`
 
-Collection of default configurations for eslint, tsconfig, and vitest.
+Collection of default configurations for eslint, and tsconfig.

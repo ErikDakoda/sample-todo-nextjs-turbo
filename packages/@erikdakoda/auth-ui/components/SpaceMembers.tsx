@@ -1,7 +1,7 @@
 import { PlusIcon } from '@heroicons/react/24/outline';
-import { useCurrentSpace } from '@dakoda/auth-ui/context';
-import { useFindManySpaceUser } from '@dakoda/database/hooks';
-import type { Space } from '@dakoda/database';
+import { useCurrentSpace } from '../context';
+import { useFindManySpaceUser } from '@erikdakoda/database/hooks';
+import type { Space } from '@erikdakoda/database';
 import Avatar from './Avatar';
 import ManageMembers from './ManageMembers';
 

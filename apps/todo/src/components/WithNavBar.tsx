@@ -1,4 +1,4 @@
-import { useCurrentSpace, useCurrentUser } from '@dakoda/auth-ui/context';
+import { useCurrentSpace, useCurrentUser } from '@erikdakoda/auth-ui/context';
 import NavBar from './NavBar';
 
 type Props = {

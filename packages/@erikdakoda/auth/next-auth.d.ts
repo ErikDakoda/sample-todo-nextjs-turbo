@@ -1,4 +1,4 @@
-import type { UserRole, SpaceUser } from '@dakoda/database';
+import type { UserRole, SpaceUser } from '@erikdakoda/database';
 
 declare module 'next-auth' {
   interface User {

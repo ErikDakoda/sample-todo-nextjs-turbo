@@ -1,5 +1,5 @@
-import { NextRequestHandler } from '@dakoda/database/server/zenstackServerNext';
-import { getEnhancedPrisma } from '@dakoda/database/server/getEnhancedPrisma';
+import { NextRequestHandler } from '@erikdakoda/database/server/zenstackServerNext';
+import { getEnhancedPrisma } from '@erikdakoda/database/server/getEnhancedPrisma';
 
 export default NextRequestHandler({
   getPrisma: (req, res) => getEnhancedPrisma({ req, res }),

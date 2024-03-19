@@ -3,15 +3,15 @@ import {
   useCurrentSpace,
   useCurrentUser,
   UserContext,
-} from '@dakoda/auth-ui/context';
-import AuthGuard from '@dakoda/auth-ui/AuthGuard';
+} from '@erikdakoda/auth-ui/context';
+import AuthGuard from '@erikdakoda/auth-ui/components/AuthGuard';
 import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Provider as ZenStackHooksProvider } from '@erikdakoda/database/hooks';
 import { Analytics } from '@vercel/analytics/react';
-import '@dakoda/tailwind-ui/styles.css';
+import '../tailwind/styles.css';
 import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function AppContent(props: { children: JSX.Element | JSX.Element[] }) {

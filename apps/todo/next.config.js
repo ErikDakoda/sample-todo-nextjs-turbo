@@ -12,15 +12,19 @@ const nextConfig = {
     serverComponentsExternalPackages: ['@zenstackhq/runtime'],
   },
   transpilePackages: [
-    '@erikdakoda/database',
-    '@erikdakoda/tailwind-ui',
-    '@erikdakoda/todo',
     '@erikdakoda/auth',
     '@erikdakoda/auth-ui',
+    '@erikdakoda/database',
+    '@erikdakoda/todo',
+    '@erikdakoda/todo-ui',
   ],
   swcMinify: true,
   images: {
-    domains: ['picsum.photos', 'lh3.googleusercontent.com', 'avatars.githubusercontent.com'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'picsum.photos' },
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+      { protocol: 'https', hostname: 'avatars.githubusercontent.com' },
+    ],
   },
   env: {
     APP_VERSION: process.env.npm_package_version,

@@ -1,13 +1,14 @@
 import { PlusIcon } from '@heroicons/react/24/outline';
-import { useCurrentUser } from '@dakoda/auth-ui/context';
+import { useCurrentUser } from '@erikdakoda/auth-ui/context';
 import { useCreateTodo, useFindManyTodo } from '@erikdakoda/database/hooks/todo';
-import type { List, Space } from '@dakoda/database';
+import type { List, Space } from '@erikdakoda/database';
 import BreadCrumb from '@/components/BreadCrumb';
-import TodoComponent from '@/components/Todo';
+import TodoComponent from '@erikdakoda/todo-ui/components/Todo';
 import WithNavBar from '@/components/WithNavBar';
 import type { GetServerSideProps } from 'next';
 import { type ChangeEvent, type KeyboardEvent, useState } from 'react';
-import { getEnhancedPrisma } from '@dakoda/database/server/getEnhancedPrisma';
+import { getEnhancedPrisma } from '@erikdakoda/database/server/getEnhancedPrisma';
+import { toast } from 'react-toastify';
 
 type Props = {
   space: Space;
@@ -34,8 +35,11 @@ export default function TodoList(props: Props) {
       data: {
         title,
         owner: { connect: { id: user!.id } },
+        space: { connect: { id: props.space.id } },
         list: { connect: { id: props.list.id } },
       },
+    }).catch((error) => {
+      toast.error(error.message);
     });
     setTitle('');
   };

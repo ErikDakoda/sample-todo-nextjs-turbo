@@ -11,7 +11,7 @@
     "pnpm:install": "pnpm install",
     "prisma:studio": "pnpm -F @erikdakoda/database prisma:studio",
     "prisma:push": "pnpm -F @erikdakoda/database prisma:push",
-    "prisma:push-hard": "pnpm -F @erikdakoda/database prisma:push-hard",
+    "prisma:deploy": "pnpm -F @erikdakoda/database prisma:deploy",
     "prisma:symlinks": "pnpm -F @erikdakoda/database prisma:symlinks",
     "zen:generate": "pnpm -F @erikdakoda/database zen:generate",
     "clean": "turbo run clean && rm -rf node_modules/",
@@ -23,13 +23,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "ts:check": "turbo run ts:check",
-    "vitest:symlinks": "bash scripts/vitest-symlinks.sh",
-    "vitest:unit": "vitest unit",
-    "vitest:integ": "vitest integ",
-    "vitest:coverage": "turbo run vitest:coverage",
-    "npm:version": "turbo run npm:version -- 0.1.0",
-    "npm:check-update": "turbo run npm:check-update",
-    "npm:check-unused": "turbo run npm:check-unused",
+    "npm:version": "turbo run npm:version -- 0.1.1",
     "syncpack:list": "syncpack list-mismatches",
     "syncpack:fix": "syncpack fix-mismatches",
     "syncpack:update": "syncpack update --types 'prod,dev'"
@@ -49,7 +43,6 @@
     "prettier": "3.2.5",
     "syncpack": "12.3.0",
     "turbo": "1.12.5",
-    "typescript": "5.4.2",
-    "vitest": "1.4.0"
+    "typescript": "5.4.2"
   }
 }

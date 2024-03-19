@@ -1,10 +1,10 @@
-import { useCurrentUser } from '@dakoda/auth-ui/context';
-import type { Space } from '@dakoda/database';
-import Spaces from '@/components/Spaces';
+import { useCurrentUser } from '@erikdakoda/auth-ui/context';
+import type { Space } from '@erikdakoda/database';
+import Spaces from '@erikdakoda/auth-ui/components/Spaces';
 import WithNavBar from '@/components/WithNavBar';
 import type { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
-import { getEnhancedPrisma } from '@dakoda/database/server/getEnhancedPrisma';
+import { getEnhancedPrisma } from '@erikdakoda/database/server/getEnhancedPrisma';
 
 type Props = {
   spaces: Space[];

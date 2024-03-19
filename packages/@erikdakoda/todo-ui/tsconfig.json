@@ -1,0 +1,18 @@
+{
+  "extends": "default-configs/tsconfig/react.json",
+  "root": "true",
+  "compilerOptions": {
+    "paths": {
+      "@erikdakoda/*": ["../../@erikdakoda/*", "./node_modules/@erikdakoda/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "/node_modules/**/*",
+    "./global.d.ts",
+    "../auth/next-auth.d.ts"
+  ],
+  "exclude": ["node_modules", "hooks", "zod", "prisma"]
+}

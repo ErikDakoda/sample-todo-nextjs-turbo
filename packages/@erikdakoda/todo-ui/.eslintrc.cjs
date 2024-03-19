@@ -2,7 +2,6 @@ module.exports = {
   root: true,
   plugins: ['@typescript-eslint', 'eslint-plugin-jsdoc'],
   extends: [
-    'plugin:tailwindcss/recommended',
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'plugin:jsdoc/recommended-typescript',

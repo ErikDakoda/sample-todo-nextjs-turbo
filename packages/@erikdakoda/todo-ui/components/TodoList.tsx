@@ -1,12 +1,12 @@
 import { LockClosedIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { useDeleteList } from '@dakoda/database/hooks';
-import type { List } from '@dakoda/database';
+import { useDeleteList } from '@erikdakoda/database/hooks';
+import type { List } from '@erikdakoda/database';
 import { customAlphabet } from 'nanoid';
 import type { User } from 'next-auth';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Avatar from './Avatar';
+import Avatar from '@erikdakoda/auth-ui/components/Avatar';
 import TimeInfo from './TimeInfo';
 
 type Props = {
@@ -44,7 +44,7 @@ export default function TodoList({ value }: Props) {
         </Link>
         <div className="card-actions flex w-full justify-between">
           <div>
-            <TimeInfo value={value} />
+            <TimeInfo value={value} />®
           </div>
           <div className="flex space-x-2">
             <Avatar user={value.owner} size={18} />

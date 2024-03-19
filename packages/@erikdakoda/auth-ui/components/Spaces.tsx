@@ -1,5 +1,5 @@
-import { useCountList } from '@dakoda/database/hooks';
-import type { Space } from '@dakoda/database';
+import { useCountList } from '@erikdakoda/database/hooks';
+import type { Space } from '@erikdakoda/database';
 import Link from 'next/link';
 
 type Props = {

@@ -14,5 +14,5 @@ const adminUser = {
 export const adminEnhancedPrisma = enhance(
   extendedPrisma,
   { user: adminUser },
-  { logPrismaQuery: process.env.LOG_PRISMA_QUERY === 'true' },
+  { logPrismaQuery: process.env.LOG_ZEN_QUERY === 'true' },
 );

@@ -1,6 +1,6 @@
 // ** Prisma
-import { extendedPrisma } from '@dakoda/database/server/extendedPrisma';
-import { type PrismaClient, type Space, SpaceUserRole } from '@dakoda/database';
+import { extendedPrisma } from '@erikdakoda/database/server/extendedPrisma';
+import { type PrismaClient, type Space, SpaceUserRole } from '@erikdakoda/database';
 
 // ** NextAuth
 import type { NextAuthOptions, User } from 'next-auth';

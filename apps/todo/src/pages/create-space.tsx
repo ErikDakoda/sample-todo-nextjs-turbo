@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { useCreateSpace } from '@dakoda/database/hooks';
-import { SpaceUserRole } from '@dakoda/database';
+import { useCreateSpace } from '@erikdakoda/database/hooks';
+import { SpaceUserRole } from '@erikdakoda/database';
 import WithNavBar from '@/components/WithNavBar';
 import type { NextPage } from 'next';
-import { useCurrentUser } from '@dakoda/auth-ui/context';
+import { useCurrentUser } from '@erikdakoda/auth-ui/context';
 import { useRouter } from 'next/router';
 import { type FormEvent, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -98,7 +98,9 @@ const CreateSpace: NextPage = () => {
           <div className="flex space-x-4 mt-6">
             <input
               type="submit"
-              disabled={name.length < 4 || name.length > 20 || !slug.match(/^[0-9a-zA-Z]{4,16}$/)}
+              disabled={
+                name.length < 4 || name.length > 20 || !slug.match(/^[0-9a-zA-Z_\-]{4,50}$/)
+              }
               value="Create"
               className="btn btn-primary px-8"
             />

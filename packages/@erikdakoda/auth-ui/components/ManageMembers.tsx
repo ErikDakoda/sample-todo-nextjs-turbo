@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { useCurrentUser } from '@dakoda/auth-ui/context';
+import { useCurrentUser } from '../context';
 import {
   useCreateSpaceUser,
   useDeleteSpaceUser,
   useFindManySpaceUser,
 } from '@erikdakoda/database/hooks';
-import { type Space, SpaceUserRole } from '@dakoda/database';
+import { type Space, SpaceUserRole } from '@erikdakoda/database';
 import { type ChangeEvent, type KeyboardEvent, useState } from 'react';
 import { toast } from 'react-toastify';
 import Avatar from './Avatar';

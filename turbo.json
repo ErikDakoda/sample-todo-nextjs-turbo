@@ -4,7 +4,6 @@
   "globalEnv": ["DATABASE_*"],
   "pipeline": {
     "build-quick": {
-      "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "build": {
@@ -24,7 +23,7 @@
       "dependsOn": ["prisma:symlinks"],
       "cache": false
     },
-    "prisma:push-hard": {
+    "prisma:deploy": {
       "dependsOn": ["prisma:symlinks"],
       "cache": false
     },
@@ -34,12 +33,8 @@
     },
     "clean": { "cache": false },
     "lint": {},
+    "format": {},
     "ts:check": {},
-    "vitest:unit": {},
-    "vitest:integ": {},
-    "vitest:coverage": {},
-    "vitest:symlinks": {},
-    "npm:check-update": {},
     "npm:version": {}
   }
 }
