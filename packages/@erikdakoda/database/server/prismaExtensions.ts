@@ -1,4 +1,4 @@
-import { type PrismaClient, Prisma } from 'db';
+import { type PrismaClient, Prisma } from '@prisma/client';
 
 export type Extension = ReturnType<typeof Prisma.defineExtension>;
 
