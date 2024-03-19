@@ -1,4 +1,4 @@
-import { type PrismaClient } from '@prisma/client';
+import { type PrismaClient } from '@erikdakoda/database';
 
 declare global {
   const prisma: PrismaClient | undefined;
