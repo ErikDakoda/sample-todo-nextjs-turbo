@@ -251,6 +251,9 @@ importers:
       '@zenstackhq/server':
         specifier: 1.11.12
         version: 1.11.12
+      db:
+        specifier: link:prisma/client
+        version: link:prisma/client
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: 14.1.3
