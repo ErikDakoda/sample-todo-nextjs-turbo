@@ -1,6 +1,6 @@
 import { Client } from '@planetscale/database';
 import { PrismaPlanetScale } from '@prisma/adapter-planetscale';
-import PrismaModule, { PrismaClient } from '../prisma/client';
+import { Prisma, PrismaClient } from '../prisma/client';
 
 export function getBasePrisma() {
   const client = new Client({
@@ -16,5 +16,6 @@ export function getBasePrisma() {
 }
 
 export function getPrismaModule() {
-  return PrismaModule;
+  console.log('getPrismaModule called: ', Prisma);
+  return Prisma;
 }
