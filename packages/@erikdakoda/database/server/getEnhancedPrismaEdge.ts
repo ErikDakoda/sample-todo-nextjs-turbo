@@ -1,7 +1,7 @@
-import { type AuthUser, enhance } from '@zenstackhq/runtime';
-import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@erikdakoda/auth/server/next-auth';
-import { getBasePrisma } from './getBasePrisma';
+import { enhance, type AuthUser } from '@zenstackhq/runtime';
+import { getServerSession } from 'next-auth/next';
+import { getBasePrisma, getPrismaModule } from './getBasePrisma';
 import { getExtendedPrisma } from './prismaExtensions';
 
 const basePrisma = getBasePrisma();
@@ -14,6 +14,6 @@ export async function getEnhancedPrismaEdge(req, res) {
   return enhance(
     extendedPrisma,
     { user: session?.user as unknown as AuthUser },
-    { logPrismaQuery: process.env.LOG_ZEN_QUERY === 'true' },
+    { logPrismaQuery: process.env.LOG_ZEN_QUERY === 'true', prismaModule: getPrismaModule() },
   );
 }

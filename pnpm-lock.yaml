@@ -246,18 +246,18 @@ importers:
         specifier: 5.7.1
         version: 5.7.1(prisma@5.7.1)
       '@zenstackhq/runtime':
-        specifier: 1.11.11
-        version: 1.11.11
+        specifier: 1.11.12
+        version: 1.11.12
       '@zenstackhq/server':
-        specifier: 1.11.11
-        version: 1.11.11
+        specifier: 1.11.12
+        version: 1.11.12
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: 14.1.3
         version: 14.1.3
       '@zenstackhq/tanstack-query':
-        specifier: 1.11.11
-        version: 1.11.11
+        specifier: 1.11.12
+        version: 1.11.12
       dotenv-cli:
         specifier: 7.4.1
         version: 7.4.1
@@ -268,8 +268,8 @@ importers:
         specifier: 5.7.1
         version: 5.7.1
       zenstack:
-        specifier: 1.11.11
-        version: 1.11.11
+        specifier: 1.11.12
+        version: 1.11.12
 
   packages/@erikdakoda/todo:
     devDependencies:
@@ -2186,14 +2186,14 @@ packages:
     resolution: {integrity: sha512-PuJe7vDIi6VYSinuEbUIQgMIRZGgM8e4R+G+/dQTk0X1NEdvgvvgv7m+rfmDH1gZzyA1OjjoWskvHlfRNfQf3g==}
     dev: true
 
-  /@zenstackhq/language@1.11.11:
-    resolution: {integrity: sha512-CB7iwx4o3RfMaP9UmXWBVa2g1FOmBLcjr52QOPXOYGvgSpYAEyFNDHx/WqU0Y25mxLhA6MO04s35as1c0WqShg==}
+  /@zenstackhq/language@1.11.12:
+    resolution: {integrity: sha512-O1/SJxczVBcMDYEGiBdyAmhqNWd0dJbPc+7uB7DBiIAjeZpBtnmFnq5wVAsFy1REnp0ry/x2KvHa4D5j856/pg==}
     dependencies:
       langium: 1.3.1
     dev: true
 
-  /@zenstackhq/runtime@1.11.11:
-    resolution: {integrity: sha512-aFt8ukGXL1yQS+u92sgncJdT0vF1fcsVSHMVVq0s8H2hPVzArN4cpzYG3WQKD9U81/rR+HEC7t/agpXye+hzPw==}
+  /@zenstackhq/runtime@1.11.12:
+    resolution: {integrity: sha512-esoztF9mfhqSY2Ff6mM3HBudmDY2hSNhK+G1s044lAtynJuwQLLM7nPw4zLl4YJ3CJqGfEl9ZOATVG07BkWX1g==}
     dependencies:
       '@types/bcryptjs': 2.4.6
       bcryptjs: 2.4.3
@@ -2213,14 +2213,14 @@ packages:
       zod: 3.22.4
       zod-validation-error: 1.5.0(zod@3.22.4)
 
-  /@zenstackhq/sdk@1.11.11:
-    resolution: {integrity: sha512-jplSufThTtC0NtfOugwlCFXhn8WbYk7O9Viq6ROO7/rJgw7ab4H1EOOgC0j92gslRo70eqSuM58wQmo4KU9aoQ==}
+  /@zenstackhq/sdk@1.11.12:
+    resolution: {integrity: sha512-WDXOk8AuMjrJ16D8aHRvosfBchaXZ20k6TA/ZN1BLnbwkEt1Kv+Ga7Y0mB7AGz/4UeDaPTYWDUHAY1yFXe2smw==}
     dependencies:
       '@prisma/generator-helper': 5.11.0
       '@prisma/internals': 4.16.2
       '@prisma/internals-v5': /@prisma/internals@5.11.0
-      '@zenstackhq/language': 1.11.11
-      '@zenstackhq/runtime': 1.11.11
+      '@zenstackhq/language': 1.11.12
+      '@zenstackhq/runtime': 1.11.12
       lower-case-first: 2.0.2
       prettier: 3.2.5
       semver: 7.6.0
@@ -2231,10 +2231,10 @@ packages:
       - supports-color
     dev: true
 
-  /@zenstackhq/server@1.11.11:
-    resolution: {integrity: sha512-IZX4vEGQ1GzIJV5LCipPODGcoUDNsdYxqQ17r+7VWsWVXI9Oikv3lqsNTxfCiwKRHcsfuvU3V+ZfFY3py0dDcQ==}
+  /@zenstackhq/server@1.11.12:
+    resolution: {integrity: sha512-xfT4zQ0i/JXHXNFkKf5GTAjVwvwkL0Fj5g3Y/g6ziplFVsvJ/+fUTFIkwDXp6C8rk3LVIQLggvAHjfMsK3f7Lw==}
     dependencies:
-      '@zenstackhq/runtime': 1.11.11
+      '@zenstackhq/runtime': 1.11.12
       change-case: 4.1.2
       lower-case-first: 2.0.2
       superjson: 1.13.3
@@ -2246,12 +2246,12 @@ packages:
       zod-validation-error: 1.5.0(zod@3.22.4)
     dev: false
 
-  /@zenstackhq/tanstack-query@1.11.11:
-    resolution: {integrity: sha512-mPXNtoQChhHxnVrngucppD51wf482zt4fyxLdzpBTSUuP/0xCY3mdrvDvMKFasRnpLskT2F5FR1vt3yBvWU3ww==}
+  /@zenstackhq/tanstack-query@1.11.12:
+    resolution: {integrity: sha512-mUns9qzuDoUsAK6DzZqTkGjtx0HSW9TwZEAsHo0Zr1VC+PsOPvej0GGts83eJGcYTXUrCcxFYHRosidUf0EX+A==}
     dependencies:
       '@prisma/generator-helper': 5.11.0
-      '@zenstackhq/runtime': 1.11.11
-      '@zenstackhq/sdk': 1.11.11
+      '@zenstackhq/runtime': 1.11.12
+      '@zenstackhq/sdk': 1.11.12
       change-case: 4.1.2
       cross-fetch: 4.0.0
       decimal.js: 10.4.3
@@ -8282,16 +8282,16 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zenstack@1.11.11:
-    resolution: {integrity: sha512-lpGFtAGbQWFIPxBogVSuJ5HM8vDMICD3ias3ril65kYEtpelHSioMQASaBaTU/M3TgA+Zb+ZhszcardVtjVMDw==}
+  /zenstack@1.11.12:
+    resolution: {integrity: sha512-0KMlhVrfMumiDjif+cTawOiIO6+XZwi3YvNzcfbPr1ESNOAJtEClaxJi0gC/Yd8J9mIy/QqKsPx7QviSJRH1dQ==}
     engines: {vscode: ^1.56.0}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@paralleldrive/cuid2': 2.2.2
       '@prisma/generator-helper': 5.11.0
-      '@zenstackhq/language': 1.11.11
-      '@zenstackhq/sdk': 1.11.11
+      '@zenstackhq/language': 1.11.12
+      '@zenstackhq/sdk': 1.11.12
       async-exit-hook: 2.0.1
       change-case: 4.1.2
       colors: 1.4.0
