@@ -22,7 +22,8 @@
     "@prisma/adapter-planetscale": "5.9.1",
     "@prisma/client": "5.7.1",
     "@zenstackhq/runtime": "1.11.12",
-    "@zenstackhq/server": "1.11.12"
+    "@zenstackhq/server": "1.11.12",
+    "db": "link:prisma/client"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.1.3",
