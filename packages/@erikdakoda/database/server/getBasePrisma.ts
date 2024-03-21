@@ -14,3 +14,5 @@ export function getBasePrisma() {
 
   return basePrisma;
 }
+
+export { Prisma } from 'db';
