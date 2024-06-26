@@ -1,10 +1,10 @@
-import "../auth/models/base"
-import "./todo"
+import "../auth/models/ownedItem"
+import "todo"
 
 /**
  * Model for a Todo list
  */
-model List extends Base {
+model List extends OwnedItem {
     title String @length(1, 100)
     todos Todo[]
 }

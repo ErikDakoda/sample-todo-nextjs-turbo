@@ -1,7 +1,6 @@
-import "../../database/schema"
 import "account"
 import "space"
-
+import "ownedItem"
 
 /*
  * Enum for user's role in a space
@@ -28,8 +27,7 @@ model User {
 
     spaces        SpaceUser[]
     accounts      Account[] // next-auth
-    lists         List[]
-    todos         Todo[]
+    ownedItems    OwnedItem[]
 
     // can be created by anyone, even not logged in
     @@allow('create', true)

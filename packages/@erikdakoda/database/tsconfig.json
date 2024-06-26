@@ -3,11 +3,9 @@
   "root": "true",
   "compilerOptions": {
     "paths": {
-      "@erikdakoda/*": ["../../@erikdakoda/*", "./node_modules/@erikdakoda/*"],
-      ".prisma/*": ["./node_modules/.prisma/*"],
-      ".zenstack/*": ["./node_modules/.zenstack/*"]
+      "@erikdakoda/*": ["../../@erikdakoda/*", "./node_modules/@erikdakoda/*"]
     }
   },
   "include": ["**/*", "../../../apps/todo/global.d.ts", "../auth/next-auth.d.ts"],
-  "exclude": ["node_modules", "__tests__", "hooks", "zod", "prisma"]
+  "exclude": ["node_modules", "__tests__", "hooks", "zod", "zenstack", "prisma"]
 }

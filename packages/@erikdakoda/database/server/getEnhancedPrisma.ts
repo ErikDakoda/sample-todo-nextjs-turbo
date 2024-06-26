@@ -1,7 +1,7 @@
+import { enhance } from '../zenstack/enhance';
 import { getServerAuthSession } from '@erikdakoda/auth/server/getServerAuthSession';
-import { enhance, type AuthUser } from '@zenstackhq/runtime';
 import type { GetServerSidePropsContext } from 'next';
-import { getBasePrisma, Prisma } from './getBasePrisma';
+import { getBasePrisma } from './getBasePrisma';
 import { getExtendedPrisma } from './prismaExtensions';
 
 const basePrisma = getBasePrisma();
@@ -22,7 +22,7 @@ export async function getEnhancedPrisma(ctx: {
   const extendedPrisma = getExtendedPrisma(basePrisma);
   return enhance(
     extendedPrisma,
-    { user: session?.user as unknown as AuthUser },
-    { logPrismaQuery: process.env.LOG_ZEN_QUERY === 'true', prismaModule: Prisma },
+    { user: session?.user },
+    { logPrismaQuery: process.env.LOG_ZEN_QUERY === 'true' },
   );
 }

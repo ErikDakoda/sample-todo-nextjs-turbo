@@ -1,4 +1,5 @@
 import "user"
+import "space"
 
 abstract model Base {
     id          String    @id @default(cuid())

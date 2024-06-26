@@ -2,7 +2,7 @@ import "../auth/models/base"
 import "../todo/list"
 import "../todo/todo"
 
-generator client {
+generator js {
   provider = "prisma-client-js"
   previewFeatures = ["driverAdapters", "fullTextSearch", "fullTextIndex"]
   output   = "./client"
@@ -22,14 +22,19 @@ plugin prisma {
 
 plugin hooks {
   provider = '@zenstackhq/tanstack-query'
-  version = "v5"
   output = "./hooks"
   target = "react"
-  useSuperJson = true
 }
 
 plugin zod {
   provider = '@core/zod'
   compile = false
   output = "./zod"
+}
+
+plugin enhancer {
+  provider = '@core/enhancer'
+  output = './zenstack'
+  generatePermissionChecker = true
+  compile = false
 }

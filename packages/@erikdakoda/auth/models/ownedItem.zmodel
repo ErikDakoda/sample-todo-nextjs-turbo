@@ -1,0 +1,9 @@
+import "base";
+import "user";
+
+model OwnedItem extends Base {
+  ownedItemType String
+
+  @@delegate(ownedItemType)
+}
+
