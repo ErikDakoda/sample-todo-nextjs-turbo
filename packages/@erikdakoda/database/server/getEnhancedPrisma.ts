@@ -1,4 +1,4 @@
-import { enhance } from '../zenstack/enhance';
+import { enhance } from '@zenstackhq/runtime';
 import { getServerAuthSession } from '@erikdakoda/auth/server/getServerAuthSession';
 import type { GetServerSidePropsContext } from 'next';
 import { getBasePrisma } from './getBasePrisma';

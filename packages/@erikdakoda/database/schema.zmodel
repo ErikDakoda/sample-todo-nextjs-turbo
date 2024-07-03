@@ -31,10 +31,3 @@ plugin zod {
   compile = false
   output = "./zod"
 }
-
-plugin enhancer {
-  provider = '@core/enhancer'
-  output = './zenstack'
-  generatePermissionChecker = true
-  compile = false
-}

@@ -1,6 +1,6 @@
 import { getExtendedPrisma } from './prismaExtensions';
 import type { UserRole } from '@erikdakoda/database/prisma/client';
-import { enhance } from '../zenstack/enhance';
+import { enhance } from '@zenstackhq/runtime';
 import { getBasePrisma } from './getBasePrisma';
 
 const basePrisma = getBasePrisma();
