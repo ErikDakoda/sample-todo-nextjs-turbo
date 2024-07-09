@@ -37,7 +37,6 @@ const userSelect = {
 };
 
 export const authOptions: NextAuthOptions = {
-  // @ts-ignore
   adapter: PrismaAdapter(extendedPrisma),
 
   session: {
@@ -115,7 +114,6 @@ export const authOptions: NextAuthOptions = {
           },
         });
       } else {
-        // @ts-ignore
         if (!user.activeSpaceId) {
           const spaceUser = await extendedPrisma.spaceUser.findFirst({
             where: {
