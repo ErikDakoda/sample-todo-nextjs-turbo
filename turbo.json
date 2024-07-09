@@ -7,7 +7,7 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "build": {
-      "dependsOn": ["prisma:push", "^build"],
+      "dependsOn": ["prisma:push", "zen:generate", "^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "dev": {
