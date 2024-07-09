@@ -9,7 +9,6 @@
     "prisma:studio": "pnpm with-env prisma studio",
     "prisma:push": "pnpm with-env prisma db push --skip-generate",
     "prisma:deploy": "pnpm prisma db push --skip-generate",
-    "prisma:symlinks": "bash ../../../scripts/prisma-symlinks.sh",
     "zen:generate": "pnpm zenstack generate",
     "clean": "rm -rf .next/ .turbo/ node_modules/ hooks prisma zenstack zod",
     "lint": "eslint .",
@@ -18,8 +17,6 @@
     "npm:version": "npm version --allow-same-version"
   },
   "dependencies": {
-    "@planetscale/database": "1.18.0",
-    "@prisma/adapter-planetscale": "5.16.0",
     "@prisma/client": "5.15.1",
     "@zenstackhq/runtime": "2.2.4",
     "@zenstackhq/server": "2.2.4",

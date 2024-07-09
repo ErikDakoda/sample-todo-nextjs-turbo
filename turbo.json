@@ -20,15 +20,9 @@
       "cache": false
     },
     "prisma:push": {
-      "dependsOn": ["prisma:symlinks"],
       "cache": false
     },
     "prisma:deploy": {
-      "dependsOn": ["prisma:symlinks"],
-      "cache": false
-    },
-    "prisma:symlinks": {
-      "dependsOn": ["zen:generate"],
       "cache": false
     },
     "clean": { "cache": false },

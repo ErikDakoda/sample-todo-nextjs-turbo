@@ -81,9 +81,11 @@ export const authOptions: NextAuthOptions = {
 
       return {
         ...session,
-        user: {
-          ...user,
-        },
+        user: user
+          ? {
+              ...user,
+            }
+          : undefined,
       };
     },
   },

@@ -1,7 +1,7 @@
 import { authOptions } from '@erikdakoda/auth/server/next-auth';
 import { enhance } from '@zenstackhq/runtime';
 import { getServerSession } from 'next-auth/next';
-import { getBasePrisma, Prisma } from './getBasePrisma';
+import { getBasePrisma } from './getBasePrisma';
 import { getExtendedPrisma } from './prismaExtensions';
 
 const basePrisma = getBasePrisma();

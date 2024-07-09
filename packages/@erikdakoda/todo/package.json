@@ -16,7 +16,7 @@
     "@typescript-eslint/parser": "7.14.1",
     "default-configs": "workspace:*",
     "dotenv": "16.4.5",
-    "eslint": "9.5.0",
+    "eslint": "8.56.0",
     "eslint-config-next": "14.2.4",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jsdoc": "48.4.0",

@@ -6,10 +6,10 @@ abstract model Base {
     createdAt   DateTime  @default(now())
     updatedAt   DateTime  @updatedAt()
     trashedAt   DateTime?
-    ownerId     String   @deny('update', ownerId != auth().id)
-    owner       User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
-    spaceId     String?   @deny('update', ownerId == auth().id)
-    space       Space?    @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+    ownerId     String    @default(auth().id) @deny('update', ownerId != auth().id)
+    owner       User      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+    spaceId     String    @default(auth().activeSpaceId) @deny('update', ownerId == auth().id)
+    space       Space     @relation(fields: [spaceId], references: [id], onDelete: Cascade)
     private     Boolean   @default(false)
     publishedAt DateTime?
 
