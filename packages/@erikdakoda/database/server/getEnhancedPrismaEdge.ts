@@ -6,7 +6,6 @@ import { getExtendedPrisma } from './prismaExtensions';
 
 const basePrisma = getBasePrisma();
 
-// @ts-ignore
 export async function getEnhancedPrismaEdge(req, res) {
   const session = await getServerSession(req, res, authOptions);
   const extendedPrisma = getExtendedPrisma(basePrisma);

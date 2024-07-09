@@ -1,5 +1,4 @@
-import type { Space } from '@erikdakoda/database';
-import type { User } from 'next-auth';
+import type { Space, User } from '@erikdakoda/database';
 import { signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';

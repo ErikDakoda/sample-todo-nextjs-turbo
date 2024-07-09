@@ -105,7 +105,7 @@ function CreateDialog() {
 
 type Props = {
   space: Space;
-  lists: (List & OwnedItem & { owner: User })[];
+  lists: (List & { owner: User } & OwnedItem)[];
 };
 
 export default function SpaceHome(props: Props) {

@@ -1,5 +1,4 @@
 import { type GetServerSidePropsContext } from 'next';
-// @ts-ignore
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from './next-auth';
 

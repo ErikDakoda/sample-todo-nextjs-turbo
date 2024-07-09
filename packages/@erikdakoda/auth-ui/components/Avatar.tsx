@@ -1,4 +1,4 @@
-import type { User } from 'next-auth';
+import type { User } from '@erikdakoda/database';
 import Image from 'next/image';
 
 type Props = {
