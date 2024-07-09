@@ -12,6 +12,7 @@ const adminUser = {
   role: 'ADMIN' as UserRole,
 };
 
+// @ts-ignore
 export const adminEnhancedPrisma = enhance(
   extendedPrisma,
   { user: adminUser },

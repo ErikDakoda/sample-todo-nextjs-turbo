@@ -9,8 +9,8 @@ const basePrisma = getBasePrisma();
 // @ts-ignore
 export async function getEnhancedPrismaEdge(req, res) {
   const session = await getServerSession(req, res, authOptions);
-  // @ts-ignore
   const extendedPrisma = getExtendedPrisma(basePrisma);
+  // @ts-ignore
   return enhance(
     extendedPrisma,
     { user: session?.user },
