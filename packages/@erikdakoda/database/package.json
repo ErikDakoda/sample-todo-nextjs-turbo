@@ -5,7 +5,7 @@
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
-    "with-env": "dotenv -e ../../../apps/todo/.env.local --",
+    "with-env": "dotenv -e ../../../apps/todo/.env --",
     "prisma:studio": "pnpm with-env prisma studio",
     "prisma:push": "pnpm with-env prisma db push --skip-generate",
     "prisma:deploy": "pnpm prisma db push --skip-generate",

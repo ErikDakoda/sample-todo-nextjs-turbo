@@ -68,7 +68,7 @@ In this fictitious app, users can be invited to workspaces where they can collab
 
 1. Setup a database
 
-   Rename `apps/todo/.env.local.example` to `.env.local`. For testing purposes, you can use the sample database provided. This database may be reset periodically.
+   Rename `apps/todo/.env.example` to `.env`. For testing purposes, you can use the sample database provided. This database may be reset periodically.
 
 2. Install dependencies
 
