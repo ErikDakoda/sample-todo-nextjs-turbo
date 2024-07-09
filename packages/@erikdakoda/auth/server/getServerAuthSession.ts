@@ -1,7 +1,7 @@
 import { type GetServerSidePropsContext } from 'next';
 // @ts-ignore
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '@erikdakoda/auth/server/next-auth';
+import { authOptions } from './next-auth';
 
 export const getServerAuthSession = async (ctx: {
   req: GetServerSidePropsContext['req'];

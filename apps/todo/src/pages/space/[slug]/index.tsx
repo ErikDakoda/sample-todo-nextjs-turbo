@@ -1,6 +1,5 @@
-import { useCurrentSpace, useCurrentUser } from '@erikdakoda/auth-ui/context';
 import { useCreateList, useFindManyList } from '@erikdakoda/database/hooks';
-import type { List, Space, User } from '@erikdakoda/database';
+import type { List, Space, User, OwnedItem } from '@erikdakoda/database';
 import BreadCrumb from '@/components/BreadCrumb';
 import SpaceMembers from '@erikdakoda/auth-ui/components/SpaceMembers';
 import TodoList from '@erikdakoda/todo-ui/components/TodoList';
@@ -12,9 +11,6 @@ import { toast } from 'react-toastify';
 import { getEnhancedPrisma } from '@erikdakoda/database/server/getEnhancedPrisma';
 
 function CreateDialog() {
-  const { user } = useCurrentUser();
-  const space = useCurrentSpace();
-
   const [modalOpen, setModalOpen] = useState(false);
   const [title, setTitle] = useState('');
   const [_private, setPrivate] = useState(false);
@@ -47,8 +43,6 @@ function CreateDialog() {
       data: {
         title,
         private: _private,
-        space: { connect: { id: space!.id } },
-        owner: { connect: { id: user!.id } },
       },
     });
   };
@@ -111,7 +105,7 @@ function CreateDialog() {
 
 type Props = {
   space: Space;
-  lists: (List & { owner: User })[];
+  lists: (List & OwnedItem & { owner: User })[];
 };
 
 export default function SpaceHome(props: Props) {

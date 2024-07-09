@@ -11,7 +11,7 @@
 
 # A Collaborative Todo Sample - ZenStack + Next.js using PNPM + Turborepo
 
-This project is a collaborative Todo app built with [Next.js](https://nextjs.org), [Next-Auth](nextauth.org), [ZenStack](https://zenstack.dev), [Tanstack Query](https://tanstack.com/query/latest/docs/framework/react), [PlanetScale serverless driver](https://www.npmjs.com/package/@planetscale/database) with [Prisma driver adapter](https://www.npmjs.com/package/@prisma/adapter-planetscale), [Zod](https://zod.dev/), and [Tailwind CSS](https://tailwindcss.com). It's purpose is to test and demonstrate the usage of Prisma and ZenStack in a monorepo setup. All apps and packages are 100% TypeScript and configured as ES Modules.
+This project is a collaborative Todo app built with [Next.js](https://nextjs.org), [Next-Auth](nextauth.org), [ZenStack](https://zenstack.dev), [Tanstack Query](https://tanstack.com/query/latest/docs/framework/react), [Zod](https://zod.dev/), and [Tailwind CSS](https://tailwindcss.com). It's purpose is to test and demonstrate the usage of Prisma and ZenStack in a monorepo setup. All apps and packages are 100% TypeScript and configured as ES Modules.
 
 In this fictitious app, users can be invited to workspaces where they can collaborate on todos. Public todo lists are visible to all members in the workspace. Password authentication is implemented using ZenStack and NextAuth.
 
@@ -30,11 +30,11 @@ In this fictitious app, users can be invited to workspaces where they can collab
 
   - `@erikdakoda`
 
-    - `auth`: Models for User, Account, Space, and SpaceUser; Base model declaring created dates, owner, and space; NextAuth configuration
+    - `auth`: NextAuth configuration; Models for User, Account, Space, and SpaceUser; OwnedItem polymorphic base model declaring created dates, owner, and space
 
     - `auth-ui`: React user context and auth components
 
-    - `database`: Prisma Client and schema
+    - `database`: Prisma Client and schema; ZenStack generates Tanstack Query hooks, Prisma client, and Zod schemas here
 
     - `todo`: Models for Todo, and List
 
@@ -60,7 +60,7 @@ In this fictitious app, users can be invited to workspaces where they can collab
 
   - In API routes and `getServerSideProps()` use `getEnhancedPrisma()` to get a Prisma Client with extensions and ZenStack enhancements enabled. Permissions with the credentials of the currently signed-in user will be enforced. See `apps/todo/src/pages/index.tsx` for an example.
 
-  - In server code where the context is not available and/or you need to execute administrative tasks, use `import { adminEnhancedPrisma } from '@dakoda/database/server/adminEnhancedPrisma'` to get a Prisma Client with extensions and ZenStack enhancements enabled. This Prisma Client impersonates an administrator.
+  - In server code where the context is not available and/or you need to execute administrative tasks, use `import { adminEnhancedPrisma } from '@erikdakoda/database/server/adminEnhancedPrisma'` to get a Prisma Client with extensions and ZenStack enhancements enabled. This Prisma Client impersonates an administrator.
 
   - There is a mechanism for packages to register [Prisma Client extensions](https://www.prisma.io/docs/orm/prisma-client/client-extensions) but it is not yet documented. In the meantime see `@erikdakoda/database/server/prismaExtensions.ts` for a minimal example.
 
@@ -68,11 +68,7 @@ In this fictitious app, users can be invited to workspaces where they can collab
 
 1. Setup a database
 
-   Rename `apps/todo/.env.local.example` to `.env.local` and update NEXTAUTH_SECRET and DATABASE_URL. For testing purposes, you can use this sample database. This database will be reset periodically.
-
-   - username: `o1q21sbhcbk4b` + `1v410xe`
-   - password: `pscale_pw_7AAh9ip6CmjkzYuS57jeV0JZD` + `QqA51q2ZqWNcFZNLH9`
-   - database: `bot-craft`
+   Rename `apps/todo/.env.example` to `.env`. For testing purposes, you can use the sample database provided. This database may be reset periodically.
 
 2. Install dependencies
 
@@ -86,34 +82,25 @@ In this fictitious app, users can be invited to workspaces where they can collab
    pnpm run zen:generate
    ```
 
-4. Create Prisma symlinks
-
-   ```bash
-   pnpm run prisma:symlinks
-   ```
-
-5. Synchronize database schema
+4. Synchronize database schema
 
    ```bash
    pnpm run prisma:push
    ```
 
-6. Start dev server
+5. Start dev server
 
    ```bash
    pnpm run dev
    ```
+
+6. Visit the app at [http://localhost:3000](http://localhost:3000)
 
 ## Gotchas
 
 While converting my Prisma/ZenStack project to a monorepo, I learned the following:
 
 - I had to add `public-hoist-pattern[]='*'` to `.npmrc`. I tried just adding `*prisma*` and `*zenstack*` but I kept getting broken builds. This can probably be fine tuned with more patience.
-
-- After building the monorepo, I have to run the script `prisma-symlinks.sh` which does two things:
-
-  - Adds the symlink `node-modules/.prisma` pointing to `@erikdakoda/database/prisma`
-  - Changes the name of the package `/packages/@erikdakoda/database/node_modules/db` from `.prisma/client` to `db` - otherwise `pnpm add` and `install` will subsequently fail
 
 - I had to add `@prisma/nextjs-monorepo-workaround-plugin` to `next.config.js`
 
