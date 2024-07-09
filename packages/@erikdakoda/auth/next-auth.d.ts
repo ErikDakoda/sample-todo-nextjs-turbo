@@ -4,13 +4,13 @@ declare module 'next-auth' {
   interface User {
     id: string;
     createdAt: date;
-    updatedAt: date;
+    updatedAt?: date;
     email: string;
-    emailVerified: date | null;
-    name: string | null;
-    image: string | null;
+    emailVerified?: date;
+    name?: string;
+    image?: string;
     role: UserRole;
-    activeSpaceId: string | null;
+    activeSpaceId?: string;
     spaces: Pick<SpaceUser, id | createdAt | updatedAt | spaceId | space | role>[] | [];
   }
 
@@ -18,13 +18,13 @@ declare module 'next-auth' {
     user: {
       id: string;
       createdAt: date;
-      updatedAt: date;
+      updatedAt?: date;
       email: string;
-      emailVerified: date | null;
-      name: string | null;
-      image: string | null;
+      emailVerified?: date;
+      name?: string;
+      image?: string;
       role: UserRole;
-      activeSpaceId: string | null;
+      activeSpaceId?: string;
       spaces: Pick<SpaceUser, id | createdAt | updatedAt | spaceId | space | role>[] | [];
     };
   }

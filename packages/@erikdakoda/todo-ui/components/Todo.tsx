@@ -1,12 +1,12 @@
 import { TrashIcon } from '@heroicons/react/24/outline';
 import { useDeleteTodo, useUpdateTodo } from '@erikdakoda/database/hooks';
-import type { Todo, User } from '@erikdakoda/database';
+import type { OwnedItem, Todo, User } from '@erikdakoda/database';
 import type { ChangeEvent } from 'react';
 import Avatar from '@erikdakoda/auth-ui/components/Avatar';
 import TimeInfo from './TimeInfo';
 
 type Props = {
-  value: Todo & { owner: User };
+  value: Todo & OwnedItem & { owner: User };
   optimistic?: boolean;
 };
 

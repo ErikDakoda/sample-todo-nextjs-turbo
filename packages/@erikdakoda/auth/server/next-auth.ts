@@ -81,11 +81,10 @@ export const authOptions: NextAuthOptions = {
 
       return {
         ...session,
-        user: user
-          ? {
-              ...user,
-            }
-          : undefined,
+        user: {
+          ...user,
+          id: token.sub!,
+        },
       };
     },
   },
