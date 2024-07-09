@@ -1,5 +1,4 @@
-import { type Space } from '@erikdakoda/database';
-import { type User } from 'next-auth';
+import type { Space, User } from '@erikdakoda/database';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { createContext } from 'react';

@@ -3,7 +3,7 @@ import { extendedPrisma } from '@erikdakoda/database/server/extendedPrisma';
 import { type PrismaClient, type Space, SpaceUserRole } from '@erikdakoda/database';
 
 // ** NextAuth
-import type { NextAuthOptions, User } from 'next-auth';
+import type { NextAuthOptions } from 'next-auth';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GitHubProvider from 'next-auth/providers/github';
@@ -89,7 +89,7 @@ export const authOptions: NextAuthOptions = {
   },
 
   events: {
-    async signIn({ user }: { user: User }) {
+    async signIn({ user }) {
       console.log('Signing in', user.email);
       let space: Space | null = null;
 
@@ -114,6 +114,7 @@ export const authOptions: NextAuthOptions = {
           },
         });
       } else {
+        // @ts-ignore
         if (!user.activeSpaceId) {
           const spaceUser = await extendedPrisma.spaceUser.findFirst({
             where: {

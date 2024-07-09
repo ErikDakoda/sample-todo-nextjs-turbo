@@ -1,8 +1,7 @@
 import { LockClosedIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { useDeleteList } from '@erikdakoda/database/hooks';
-import type { List, OwnedItem } from '@erikdakoda/database';
+import type { List, User, OwnedItem } from '@erikdakoda/database';
 import { customAlphabet } from 'nanoid';
-import type { User } from 'next-auth';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -10,7 +9,7 @@ import Avatar from '@erikdakoda/auth-ui/components/Avatar';
 import TimeInfo from './TimeInfo';
 
 type Props = {
-  value: List & OwnedItem & { owner: User };
+  value: List & { owner: User } & OwnedItem;
   deleted?: (value: List) => void;
 };
 
